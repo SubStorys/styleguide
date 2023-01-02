@@ -11,6 +11,7 @@
 - Die Namenskonvention wird von Modifikatoren wie const, static, readonly usw. nicht beeinflusst.
 - Für Groß- und Kleinschreibung ist ein „Wort“ alles, was ohne Leerzeichen geschrieben wird, einschließlich Akronyme. Beispiel : `myRb` statt `myRB`.
 - Namen von Interfaces starten mit einem `I_` : `I_exampleInterface`
+- Generic Types starten mit `T_`. Sollte man nur Ein Typ benutzen nur ein `T` : `exampleFunction<T>`, `exampleFunction<T_int, T_string>`
 
 #### Datein/Ordner
 - Namen von Datein/Ordnern fangen immer klein an : `exampleFolder`, `exampleScript.cs`
