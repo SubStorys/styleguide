@@ -6,28 +6,25 @@
 - Es werden **NIE** umlaute in Namen benutzt. Immer die Englische schreib variante benutzen.
 
 #### Code
-- Namen von Klassen, Methoden, Enumerations, Öffentliche Eigenschaften, Lokale Eigenschaften, Namespaces : ` exampleName `
-- Namen von Privaten, geschützte, interne und geschützte interne Felder und Eigenschaften : `_exampleName`
+- Namen von Klassen, Methoden, Enumerations, Öffentliche Eigenschaften, Lokale Eigenschaften, Namespaces : ` ExampleName `
+- Namen von Privaten, geschützte, interne und geschützte interne Felder und Eigenschaften : `_ExampleName`
 - Die Namenskonvention wird von Modifikatoren wie const, static, readonly usw. nicht beeinflusst.
-- Für Groß- und Kleinschreibung ist ein „Wort“ alles, was ohne Leerzeichen geschrieben wird, einschließlich Akronyme. Beispiel : `myRb` statt `myRB`.
-- Namen von Interfaces starten mit einem `I_` : `I_exampleInterface`
-- Generic Types starten mit `T_`. Sollte man nur Ein Typ benutzen nur ein `T` : `exampleFunction<T>`, `exampleFunction<T_int, T_string>`
+- Für Groß- und Kleinschreibung ist ein „Wort“ alles, was ohne Leerzeichen geschrieben wird, einschließlich Akronyme. Beispiel : `MyRb` statt `MyRB`.
+- Namen von Interfaces starten mit einem `I_` : `I_ExampleInterface`
 
 #### Datein/Ordner
-- Namen von Datein/Ordnern fangen immer klein an : `exampleFolder`, `exampleScript.cs`
 - Datein/Ordner Namen werden **NICHT** Abgekürtzt.
-- Der Skript Ordner in Unity Projekten hat immer den Namen : `_scripts`
+- Der Skript Ordner in Unity Projekten hat immer den Namen : `_scripts`.
 
 ### Leerzeichen Regeln
 - Maximal eine Aussage pro Zeile.
 - Maximal eine Zuordnung pro Aussage.
-- Einrückung von 2 Leerzeichen, keine Tabulatoren.
 - Spaltenlimit: 300.
 - Kein Zeilenumbruch vor dem Öffnen der geschweiften Klammer.
 - Kein Zeilenumbruch zwischen schließender geschweifter Klammer und sonst.
 - Klammern werden verwendet, auch wenn sie optional sind.
 - Leerzeichen nach `if/for/while` usw. und nach Kommas.
-- Kein Leerzeichen nach einer öffnenden Klammer oder vor einer schließenden Klammer.
+- Ein Leerzeichen nach einer öffnenden Klammer oder vor einer schließenden Klammer.
 - Ein Leerzeichen zwischen dem Operator und jedem Operanden aller anderen Operatoren.
 - Der Zeilenumbruch wurde anhand der Stilrichtlinien von Google C++ entwickelt, mit geringfügigen Änderungen für die Kompatibilität mit den C#-Formatierungstools von Microsoft:
 - Generell werden Zeilenfortsetzungen um 4 Leerzeichen eingerückt.
@@ -40,60 +37,60 @@
 using System;                                       // `using` goes at the top, outside the
                                                     // namespace.
 
-namespace myNamespace {                             // Namespaces are PascalCase.
+namespace MyNamespace {                             // Namespaces are PascalCase.
                                                     // Indent after namespace.
-  public interface I_myInterface {                   // Interfaces start with 'I'
+  public interface I_MyInterface {                   // Interfaces start with 'I'
     public int calculate(float value, float exp);   // Methods are PascalCase
                                                     // ...and space after comma.
   }
 
-  public enum myEnum {                              // Enumerations are PascalCase.
+  public enum MyEnum {                              // Enumerations are PascalCase.
     Yes,                                            // Enumerators are PascalCase.
     No,
   }
 
-  public class myClass {                            // Classes are PascalCase.
-    public int foo = 0;                             // Public member variables are
+  public class MyClass {                            // Classes are PascalCase.
+    public int Foo = 0;                             // Public member variables are
                                                     // PascalCase.
-    public bool noCounting = false;                 // Field initializers are encouraged.
+    public bool NoCounting = false;                 // Field initializers are encouraged.
 
-    private class _Results {
-      public int numNegativeResults = 0;
-      public int numPositiveResults = 0;
+    private class Results {
+      public int NumNegativeResults = 0;
+      public int NumPositiveResults = 0;
     }
 
-    private _Results _results;                       // Private member variables are
+    private Results results;                       // Private member variables are
                                                     // _camelCase.
-    public static int numTimesCalled = 0;
-    private const int _bar = 100;                   // const does not affect naming
+    public static int NumTimesCalled = 0;
+    private const int bar = 100;                   // const does not affect naming
                                                     // convention.
-    private int[] _someTable = {                    // Container initializers use a 2
+    private int[] SomeTable = {                    // Container initializers use a 2
       2, 3, 4,                                      // space indent.
     }
 
-    public myClass() {
-      _results = new _Results {
-        numNegativeResults = 1,                     // Object initializers use a 2 space
-        numPositiveResults = 1,                     // indent.
+    public MyClass() {
+      results = new _Results {
+        NumNegativeResults = 1,                     // Object initializers use a 2 space
+        NumPositiveResults = 1,                     // indent.
       };
     }
 
-    public int calculateValue(int mulNumber) {      // No line break before opening brace.
-      private var _resultValue = foo * mulNumber;            // Local variables are camelCase.
-      numTimesCalled++;
-      foo += _bar;
+    public int CalculateValue(int mulNumber) {      // No line break before opening brace.
+      private var ResultValue = Foo * MulNumber;            // Local variables are camelCase.
+      NumTimesCalled++;
+      Foo += Bar;
 
-      if (!noCounting) {                            // No space after unary operator and
+      if (!NoCounting) {                            // No space after unary operator and
                                                     // space after 'if'.
-        if (_resultValue < 0) {                      // Braces used even when optional and
+        if (eRsultValue < 0) {                      // Braces used even when optional and
                                                     // spaces around comparison operator.
-          _results.numNegativeResults++;
-        } else if (_resultValue > 0) {               // No newline between brace and else.
-          _results.numPositiveResults++;
+          Results.NumNegativeResults++;
+        } else if (resultValue > 0) {               // No newline between brace and else.
+          results.NumPositiveResults++;
         }
       }
 
-      return _resultValue;
+      return resultValue;
     }
 
     public void doNothing() {}                             // Empty blocks may be concise.
